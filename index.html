@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人职业经历分享</title>
+    <meta
+      name="description"
+      content="个人职业经历与方法论沉淀：用户增长、策略产品、生成式内容工具与推荐策略；以及对智能体化营销平台的思考。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Ambient layer (subtle) -->
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <svg class="bg-lines" aria-hidden="true" viewBox="0 0 1200 800" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="glow" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stop-color="#bfe9ff" stop-opacity="0.0" />
+          <stop offset="35%" stop-color="#bfe9ff" stop-opacity="0.55" />
+          <stop offset="70%" stop-color="#7bd4ff" stop-opacity="0.18" />
+          <stop offset="100%" stop-color="#7bd4ff" stop-opacity="0.0" />
+        </linearGradient>
+        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2.2" result="blur" />
+          <feColorMatrix
+            in="blur"
+            type="matrix"
+            values="
+              1 0 0 0 0
+              0 1 0 0 0
+              0 0 1 0 0
+              0 0 0 0.75 0"
+            result="glow"
+          />
+          <feMerge>
+            <feMergeNode in="glow" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+      <path
+        d="M-40,620 C220,520 280,710 520,600 C720,510 780,240 1020,320 C1120,354 1180,310 1240,240"
+        fill="none"
+        stroke="url(#glow)"
+        stroke-width="2"
+        filter="url(#softGlow)"
+        pathLength="1"
+      />
+      <path
+        d="M-80,210 C140,150 270,330 410,280 C600,210 720,40 920,110 C1050,156 1120,120 1280,70"
+        fill="none"
+        stroke="url(#glow)"
+        stroke-width="1.6"
+        opacity="0.7"
+        filter="url(#softGlow)"
+        pathLength="1"
+      />
+    </svg>
+
+    <header class="topbar" id="top">
+      <div class="topbar__inner">
+        <a class="brand" href="#top" aria-label="回到顶部">
+          <span class="brand__dot"></span>
+          <span class="brand__text">个人职业经历分享</span>
+        </a>
+
+        <nav class="nav" aria-label="页面导航">
+          <a class="nav__link is-active" href="#about">关于</a>
+          <a class="nav__link" href="#experience">经历</a>
+          <a class="nav__link" href="#capability">方法论</a>
+          <a class="nav__link" href="#aipilot">新业务</a>
+          <a class="nav__link" href="#insight">洞察</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <!-- HERO -->
+      <section class="hero section">
+        <div class="hero__wrap">
+          <div class="hero__headline reveal">
+            <p class="kicker">个人职业经历分享</p>
+            <h1>
+              唐昭进
+              <span class="h1-sub">增长 × 策略产品 × 生成式内容/推荐</span>
+            </h1>
+            <p class="lead">
+              从用户价值分层、全渠道触达，到生成式内容工具与推荐策略落地；现在聚焦
+              <strong>智能体化营销平台</strong>的“可控执行闭环”。
+            </p>
+
+            <div class="chips" role="list">
+              <span class="chip" role="listitem">用户洞察 / 价值分层</span>
+              <span class="chip" role="listitem">全渠道触达体系</span>
+              <span class="chip" role="listitem">生成式内容工具产品化</span>
+              <span class="chip" role="listitem">推荐策略 & 对照实验</span>
+              <span class="chip chip--accent" role="listitem">智能体化营销</span>
+            </div>
+
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="#experience">向下看经历</a>
+              <a class="btn btn--ghost" href="#aipilot">直接看新业务</a>
+            </div>
+          </div>
+
+          <aside class="hero__panel reveal" aria-label="快速信息">
+            <figure class="avatar thumb">
+              <button
+                class="thumb__btn"
+                type="button"
+                data-lightbox
+                data-src="./assets/个人网站图片信息补充/个人介绍-头像.jpg"
+                data-caption="个人头像"
+                aria-label="查看头像大图"
+              >
+                <img
+                  class="avatar__img"
+                  src="./assets/个人网站图片信息补充/个人介绍-头像.jpg"
+                  alt="个人头像"
+                  loading="lazy"
+                />
+              </button>
+              <figcaption class="avatar__cap muted">点击可放大查看</figcaption>
+            </figure>
+
+            <div class="glass card card--tight">
+              <div class="card__title">快速信息</div>
+              <dl class="kv">
+                <div class="kv__row">
+                  <dt>毕业</dt>
+                  <dd>湖南怀化学院 · 2022</dd>
+                </div>
+                <div class="kv__row">
+                  <dt>专业</dt>
+                  <dd>计算机科学与技术</dd>
+                </div>
+                <div class="kv__row">
+                  <dt>籍贯</dt>
+                  <dd>湖南郴州</dd>
+                </div>
+                <div class="kv__row">
+                  <dt>兴趣</dt>
+                  <dd>阅读思考 / 旅行 / 做饭 / 街舞</dd>
+                </div>
+              </dl>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <div class="section__head reveal">
+          <h2>关于我</h2>
+          <p class="muted">把“经验”沉淀为可复用的方法论，再迁移到新的业务场景。</p>
+        </div>
+
+        <div class="glass card reveal aboutline">
+          <p class="aboutline__text">
+            历史我主要在做：用户价值分层与增长转化、全渠道触达体系、资源入口流量分发策略、生成式内容工具与推荐策略落地。
+          </p>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section">
+        <div class="section__head reveal">
+          <h2>关键经历</h2>
+          <p class="muted">两段经历：用户运营增长 → 策略产品与推荐/生成式内容工具，沉淀可迁移能力。</p>
+        </div>
+
+        <div class="timeline">
+          <!-- TC -->
+          <article class="timeline__item reveal">
+            <div class="timeline__meta">
+              <div class="timeline__dot"></div>
+              <div class="timeline__when">
+                <span class="timeline__range">2022.03 — 2024.04</span>
+                <span class="timeline__place">苏州 · OTA 文旅</span>
+              </div>
+            </div>
+
+            <div class="glass card timeline__card">
+              <div class="card__top">
+                <h3>同程旅行 · 用户运营</h3>
+                <div class="pills">
+                  <span class="pill">景点门票事业部</span>
+                  <span class="pill">会员价值分层</span>
+                  <span class="pill">全渠道触达</span>
+                </div>
+              </div>
+
+              <div class="card__body">
+                <div class="biz">
+                  <div class="biz__head">
+                    <div class="biz__title">业务资料卡</div>
+                    <div class="biz__hint muted">让项目更好懂：业务是什么、目标是什么、我负责什么。</div>
+                  </div>
+                  <div class="biz__grid">
+                    <div class="biz__kv"><span class="biz__k">行业</span><span class="biz__v">在线旅游平台（文旅）</span></div>
+                    <div class="biz__kv"><span class="biz__k">产品</span><span class="biz__v">同程旅行应用 / 同程旅行小程序</span></div>
+                    <div class="biz__kv"><span class="biz__k">竞品</span><span class="biz__v">携程、美团、飞猪、去哪儿、智行</span></div>
+                    <div class="biz__kv biz__kv--span">
+                      <span class="biz__k">优劣势</span>
+                      <span class="biz__v">
+                        <div>优势：依托微信生态、流量丰富，主打三到四线客群，性价比高。</div>
+                        <div>劣势：购票体验一般，供应链供给偏弱。</div>
+                      </span>
+                    </div>
+                    <div class="biz__kv"><span class="biz__k">负责业务</span><span class="biz__v">景点门票事业部</span></div>
+                    <div class="biz__kv"><span class="biz__k">业务目标</span><span class="biz__v">提升订单量</span></div>
+                    <div class="biz__kv"><span class="biz__k">岗位</span><span class="biz__v">用户运营</span></div>
+                  </div>
+                </div>
+
+                <!-- 同程项目不放图片；这里补充业务理解相关的轻量截图（缩略图可放大） -->
+                <div class="biz biz--media">
+                  <div class="biz__head">
+                    <div class="biz__title">产品与业务截图（点击可放大）</div>
+                  </div>
+                  <div class="biz__media biz__media--wide">
+                    <figure class="thumb thumb--contain">
+                      <button
+                        class="thumb__btn"
+                        type="button"
+                        data-lightbox
+                        data-src="./assets/个人网站图片信息补充/同程旅行-产品页截图1.jpg"
+                        data-caption="同程旅行：产品页截图 1"
+                        aria-label="查看 同程旅行产品页截图 1 大图"
+                      >
+                        <img src="./assets/个人网站图片信息补充/同程旅行-产品页截图1.jpg" alt="同程旅行产品页截图 1" loading="lazy" />
+                      </button>
+                      <figcaption class="thumb__cap muted">产品页 1</figcaption>
+                    </figure>
+                    <figure class="thumb thumb--contain">
+                      <button
+                        class="thumb__btn"
+                        type="button"
+                        data-lightbox
+                        data-src="./assets/个人网站图片信息补充/同程旅行-产品页截图2.jpg"
+                        data-caption="同程旅行：产品页截图 2"
+                        aria-label="查看 同程旅行产品页截图 2 大图"
+                      >
+                        <img src="./assets/个人网站图片信息补充/同程旅行-产品页截图2.jpg" alt="同程旅行产品页截图 2" loading="lazy" />
+                      </button>
+                      <figcaption class="thumb__cap muted">产品页 2</figcaption>
+                    </figure>
+                    <figure class="thumb thumb--contain">
+                      <button
+                        class="thumb__btn"
+                        type="button"
+                        data-lightbox
+                        data-src="./assets/个人网站图片信息补充/同程旅行-负责业务截图.jpg"
+                        data-caption="同程旅行：负责业务截图"
+                        aria-label="查看 同程旅行负责业务截图 大图"
+                      >
+                        <img src="./assets/个人网站图片信息补充/同程旅行-负责业务截图.jpg" alt="同程旅行负责业务截图" loading="lazy" />
+                      </button>
+                      <figcaption class="thumb__cap muted">负责业务</figcaption>
+                    </figure>
+                  </div>
+                </div>
+
+                <div class="grid grid--2">
+                  <div>
+                    <div class="subhead">项目 01｜高价值用户规模化增长</div>
+                    <ul class="list">
+                      <li>独立负责项目整体策略规划与用户洞察，稳固高价值用户基本盘，驱动低频低价值用户向上迁移。</li>
+                      <li>基于用户画像与价值数据，搭建会员价值分层模型，明确不同层级用户的特征与核心痛点。</li>
+                      <li>针对低转化、低频次等问题设计“下单赠权益”等利益点，并推动权益福利专区产品化落地。</li>
+                      <li>跨部门协作获取曝光资源，持续 3 期策略迭代，通过对照实验验证对长期价值的提升。</li>
+                    </ul>
+                    <div class="metrics">
+                      <div class="metric">
+                        <div class="metric__v count" data-count="27.89" data-suffix="%">0</div>
+                        <div class="metric__k">下单转化率环比</div>
+                      </div>
+                      <div class="metric">
+                        <div class="metric__v count" data-count="20000" data-suffix="+">0</div>
+                        <div class="metric__k">增量订单</div>
+                      </div>
+                      <div class="metric">
+                        <div class="metric__v count" data-count="80" data-suffix="%">0</div>
+                        <div class="metric__k">参与用户价值跃迁</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="subhead">项目 02｜营销触达体系升级与精准化</div>
+                    <ul class="list">
+                      <li>针对过往营销计划混乱、人群重复触达的问题，主导梳理全渠道触达链路并推进工具化建设。</li>
+                      <li>覆盖渠道：应用推送、微信生态（服务通知、私域、订阅消息）、短信等。</li>
+                      <li>从“点状活动”升级为“体系化运营”，构建用户-渠道-权益匹配矩阵，提升资源分配与投放效率。</li>
+                      <li>每周策略复盘与迭代（累计上千条对照实验），持续优化圈选规则、触达时机与文案策略。</li>
+                    </ul>
+                    <div class="metrics">
+                      <div class="metric">
+                        <div class="metric__v count" data-count="169.93" data-suffix="%">0</div>
+                        <div class="metric__k">应用推送月活提升</div>
+                      </div>
+                      <div class="metric">
+                        <div class="metric__v count" data-count="58.28" data-suffix="%">0</div>
+                        <div class="metric__k">订单增长</div>
+                      </div>
+                      <div class="metric">
+                        <div class="metric__v count" data-count="353700" data-suffix="">0</div>
+                        <div class="metric__k">订阅消息召回用户</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+                <div class="capability-row">
+                  <span class="cap">用户分层与洞察</span>
+                  <span class="cap">增长转化策略</span>
+                  <span class="cap">全渠道运营</span>
+                  <span class="cap">数据驱动迭代</span>
+                  <span class="cap">跨部门协作</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- QQ -->
+          <article class="timeline__item reveal">
+            <div class="timeline__meta">
+              <div class="timeline__dot"></div>
+              <div class="timeline__when">
+                <span class="timeline__range">2024.05 — 2026.04</span>
+                <span class="timeline__place">深圳 · 社交 + 游戏分发</span>
+              </div>
+            </div>
+
+            <div class="glass card timeline__card">
+              <div class="card__top">
+                <h3>腾讯 QQ · 策略产品</h3>
+                <div class="pills">
+                  <span class="pill">资源分发策略</span>
+                  <span class="pill">生成式内容工具</span>
+                  <span class="pill">推荐系统</span>
+                </div>
+              </div>
+
+              <div class="card__body">
+                <div class="biz">
+                  <div class="biz__head">
+                    <div class="biz__title">业务资料卡</div>
+                    <div class="biz__hint muted">业务是什么、入口资源是什么、模块职责是什么。</div>
+                  </div>
+                  <div class="biz__grid">
+                    <div class="biz__kv"><span class="biz__k">行业</span><span class="biz__v">社交 + 游戏分发</span></div>
+                    <div class="biz__kv"><span class="biz__k">产品</span><span class="biz__v">QQ · 游戏中心</span></div>
+                    <div class="biz__kv"><span class="biz__k">岗位</span><span class="biz__v">策略产品</span></div>
+                    <div class="biz__kv biz__kv--span"><span class="biz__k">岗位职能</span><span class="biz__v">核心通过资源流量场景提效。</span></div>
+                    <div class="biz__kv biz__kv--span"><span class="biz__k">负责模块</span><span class="biz__v">资源入口流量分发策略（公众号、红点、游戏中心内部入口）。</span></div>
+                    <div class="biz__kv"><span class="biz__k">商业模式</span><span class="biz__v">CPS+CPA</span></div>
+                    <div class="biz__kv biz__kv--span"><span class="biz__k">业务目标</span><span class="biz__v">游戏社区活跃量、游戏带来的收入。</span></div>
+                    <div class="biz__kv biz__kv--span"><span class="biz__k">组织目标</span><span class="biz__v">提升通过资源流量带来的游戏下载量。</span></div>
+                    <div class="biz__kv biz__kv--span">
+                      <span class="biz__k">产品优劣势</span>
+                      <span class="biz__v">
+                        <div>优势：依托 QQ 社交生态，自带社交裂变宣发优势。</div>
+                        <div>
+                          劣势：生态里的游戏风格和偏好倾向被腾讯系游戏侵占，其他厂商优质游戏较难出圈，用户多样性未被满足。
+                        </div>
+                      </span>
+                    </div>
+                    <div class="biz__kv biz__kv--span">
+                      <span class="biz__k">竞品</span>
+                      <span class="biz__v">微信游戏中心、各大应用商店游戏中心等</span>
+                    </div>
+                  </div>
+
+                  <div class="biz__media">
+                    <figure class="thumb thumb--contain">
+                      <button
+                        class="thumb__btn"
+                        type="button"
+                        data-lightbox
+                        data-src="./assets/个人网站图片信息补充/腾讯-QQ产品截图.jpg"
+                        data-caption="QQ 产品截图"
+                        aria-label="查看 QQ 产品截图大图"
+                      >
+                        <img
+                          src="./assets/个人网站图片信息补充/腾讯-QQ产品截图.jpg"
+                          alt="QQ 产品截图"
+                          loading="lazy"
+                        />
+                      </button>
+                      <figcaption class="thumb__cap muted">QQ 产品</figcaption>
+                    </figure>
+                    <figure class="thumb thumb--contain">
+                      <button
+                        class="thumb__btn"
+                        type="button"
+                        data-lightbox
+                        data-src="./assets/个人网站图片信息补充/腾讯-QQ游戏中心截图.jpg"
+                        data-caption="QQ 游戏中心截图"
+                        aria-label="查看 QQ 游戏中心截图大图"
+                      >
+                        <img
+                          src="./assets/个人网站图片信息补充/腾讯-QQ游戏中心截图.jpg"
+                          alt="QQ 游戏中心截图"
+                          loading="lazy"
+                        />
+                      </button>
+                      <figcaption class="thumb__cap muted">游戏中心</figcaption>
+                    </figure>
+                    <figure class="thumb thumb--contain">
+                      <button
+                        class="thumb__btn"
+                        type="button"
+                        data-lightbox
+                        data-src="./assets/个人网站图片信息补充/腾讯-QQ游戏中心截图2.jpg"
+                        data-caption="QQ 游戏中心截图（补充）"
+                        aria-label="查看 QQ 游戏中心截图（补充）大图"
+                      >
+                        <img
+                          src="./assets/个人网站图片信息补充/腾讯-QQ游戏中心截图2.jpg"
+                          alt="QQ 游戏中心截图（补充）"
+                          loading="lazy"
+                        />
+                      </button>
+                      <figcaption class="thumb__cap muted">游戏中心（补充）</figcaption>
+                    </figure>
+                  </div>
+
+                  <details class="biz__more">
+                    <summary class="biz__more-summary">查看竞品截图（点击可放大）</summary>
+                    <div class="biz__media biz__media--more">
+                      <figure class="thumb thumb--contain">
+                        <button
+                          class="thumb__btn"
+                          type="button"
+                          data-lightbox
+                          data-src="./assets/个人网站图片信息补充/腾讯-微信竞品截图1.jpg"
+                          data-caption="竞品截图：微信游戏中心"
+                          aria-label="查看 竞品截图：微信游戏中心 大图"
+                        >
+                          <img src="./assets/个人网站图片信息补充/腾讯-微信竞品截图1.jpg" alt="竞品截图：微信游戏中心" loading="lazy" />
+                        </button>
+                        <figcaption class="thumb__cap muted">竞品：微信</figcaption>
+                      </figure>
+                      <figure class="thumb thumb--contain">
+                        <button
+                          class="thumb__btn"
+                          type="button"
+                          data-lightbox
+                          data-src="./assets/个人网站图片信息补充/腾讯-竞品截图2.jpg"
+                          data-caption="竞品截图：应用商店游戏中心"
+                          aria-label="查看 竞品截图：应用商店游戏中心 大图"
+                        >
+                          <img src="./assets/个人网站图片信息补充/腾讯-竞品截图2.jpg" alt="竞品截图：应用商店游戏中心" loading="lazy" />
+                        </button>
+                        <figcaption class="thumb__cap muted">竞品：应用商店</figcaption>
+                      </figure>
+                      <figure class="thumb thumb--contain">
+                        <button
+                          class="thumb__btn"
+                          type="button"
+                          data-lightbox
+                          data-src="./assets/个人网站图片信息补充/腾讯-竞品OPPO游戏中心截图3.jpg"
+                          data-caption="竞品截图：OPPO 游戏中心"
+                          aria-label="查看 竞品截图：OPPO 游戏中心 大图"
+                        >
+                          <img src="./assets/个人网站图片信息补充/腾讯-竞品OPPO游戏中心截图3.jpg" alt="竞品截图：OPPO 游戏中心" loading="lazy" />
+                        </button>
+                        <figcaption class="thumb__cap muted">竞品：OPPO</figcaption>
+                      </figure>
+                    </div>
+                  </details>
+
+                  <div class="divider"></div>
+                  <div class="biz__head">
+                    <div class="biz__title">资源场景涉及的五大工作内容板块</div>
+                  </div>
+                  <div class="hub">
+                    <svg class="hub__svg" viewBox="0 0 640 220" role="img" aria-label="五大工作板块与资源效率提升关系示意图">
+                      <defs>
+                        <linearGradient id="hubGlow" x1="0" x2="1" y1="0" y2="1">
+                          <stop offset="0%" stop-color="#e6f7ff"/>
+                          <stop offset="100%" stop-color="#bfe9ff"/>
+                        </linearGradient>
+                      </defs>
+                      <!-- links -->
+                      <g stroke="rgba(15,23,42,0.14)" stroke-width="2">
+                        <path d="M320 110 L130 55" />
+                        <path d="M320 110 L510 55" />
+                        <path d="M320 110 L90 165" />
+                        <path d="M320 110 L320 196" />
+                        <path d="M320 110 L550 165" />
+                      </g>
+                      <!-- center -->
+                      <g>
+                        <rect x="248" y="80" width="144" height="60" rx="16" fill="url(#hubGlow)" stroke="rgba(123,212,255,0.65)"/>
+                        <text x="320" y="114" text-anchor="middle" font-size="14" font-weight="800" fill="rgba(15,23,42,0.82)">资源效率提升</text>
+                        <text x="320" y="133" text-anchor="middle" font-size="11" font-weight="650" fill="rgba(15,23,42,0.58)">调度 · 触达 · 转化</text>
+                      </g>
+                      <!-- nodes -->
+                      <g fill="rgba(255,255,255,0.88)" stroke="rgba(15,23,42,0.10)">
+                        <rect x="56" y="32" width="148" height="46" rx="14"/><text x="130" y="60" text-anchor="middle" font-size="12" font-weight="800" fill="rgba(15,23,42,0.78)">平台流量政策</text>
+                        <rect x="436" y="32" width="148" height="46" rx="14"/><text x="510" y="60" text-anchor="middle" font-size="12" font-weight="800" fill="rgba(15,23,42,0.78)">内容库供给</text>
+                        <rect x="22" y="142" width="160" height="54" rx="14"/><text x="102" y="172" text-anchor="middle" font-size="12" font-weight="800" fill="rgba(15,23,42,0.78)">资源调度/渠道能力</text>
+                        <rect x="248" y="170" width="144" height="46" rx="14"/><text x="320" y="198" text-anchor="middle" font-size="12" font-weight="800" fill="rgba(15,23,42,0.78)">系统能力</text>
+                        <rect x="460" y="142" width="160" height="54" rx="14"/><text x="540" y="172" text-anchor="middle" font-size="12" font-weight="800" fill="rgba(15,23,42,0.78)">商业分析</text>
+                      </g>
+                    </svg>
+                    <div class="hub__note muted">五大板块共同服务于“资源场景效率提升”，最终体现为更高转化与更稳定体验。</div>
+                  </div>
+                </div>
+
+                <div class="grid grid--3">
+                  <div class="mini">
+                    <div class="subhead">项目 01｜生成式内容生产工具结合投放系统</div>
+                    <figure class="thumb thumb--mini">
+                      <button
+                        class="thumb__btn"
+                        type="button"
+                        data-lightbox
+                        data-src="./assets/个人网站图片信息补充/腾讯-项目1截图.png"
+                        data-caption="项目 01 截图"
+                        aria-label="查看 项目 01 截图大图"
+                      >
+                        <img src="./assets/个人网站图片信息补充/腾讯-项目1截图.png" alt="项目 01 截图" loading="lazy" />
+                      </button>
+                    </figure>
+                    <ul class="list">
+                      <li>文生文：针对内容贴合度低，设计结构化提示词与输入解析机制，识别标签/奖励词/行为词。</li>
+                      <li>引入检索增强对接游戏语料库，4000+ 优质样本协同精调，使文案可用率提升至 60%。</li>
+                      <li>图生文：解决活动页信息难解析问题，多模型选型测试与评测集建设，匹配度提升 55%。</li>
+                      <li>交互融合：卖点提取、风格/模型/模板切换、一键复制，深度融合投放系统形成闭环。</li>
+                      <li>审核闭环：文案/图片双场景策略 + 知识库兜底，审核效率提升 100%，错误打击率为 0。</li>
+                    </ul>
+                    <div class="metrics metrics--tight">
+                      <div class="metric">
+                        <div class="metric__v count" data-count="60" data-suffix="%">0</div>
+                        <div class="metric__k">文案可用率</div>
+                      </div>
+                      <div class="metric">
+                        <div class="metric__v count" data-count="200" data-suffix="%">0</div>
+                        <div class="metric__k">产出效率提升</div>
+                      </div>
+                      <div class="metric">
+                        <div class="metric__v count" data-count="20" data-suffix="%">0</div>
+                        <div class="metric__k">智能素材占比</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mini">
+                    <div class="subhead">项目 02｜好友关系链触发式游戏推荐</div>
+                    <figure class="thumb thumb--mini">
+                      <button
+                        class="thumb__btn"
+                        type="button"
+                        data-lightbox
+                        data-src="./assets/个人网站图片信息补充/腾讯-项目2截图.png"
+                        data-caption="项目 02 截图"
+                        aria-label="查看 项目 02 截图大图"
+                      >
+                        <img src="./assets/个人网站图片信息补充/腾讯-项目2截图.png" alt="项目 02 截图" loading="lazy" />
+                      </button>
+                    </figure>
+                    <ul class="list">
+                      <li>深入分析用户游戏社交行为，定义触发事件（好友下载、注册、预约）与消息触达机制。</li>
+                      <li>算法协作：召回侧新增好友协同召回；精排侧新增关系特征 + 社交文案组合打分。</li>
+                      <li>资源样式与活动承接：外显好友头像等信息，提升点击与转化意愿。</li>
+                      <li>总计 8 期对照实验陆续推全，外点率与增长投入产出显著提升。</li>
+                    </ul>
+                    <div class="metrics metrics--tight">
+                      <div class="metric">
+                        <div class="metric__v count" data-count="19.18" data-suffix="%">0</div>
+                        <div class="metric__k">资源外点率</div>
+                      </div>
+                      <div class="metric">
+                        <div class="metric__v count" data-count="93" data-suffix="%">0</div>
+                        <div class="metric__k">增长投入产出</div>
+                      </div>
+                      <div class="metric">
+                        <div class="metric__v count" data-count="110" data-suffix="%">0</div>
+                        <div class="metric__k">头部游戏投入产出</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mini">
+                    <div class="subhead">项目 03｜推荐系统效能全方位优化</div>
+                    <figure class="thumb thumb--mini">
+                      <button
+                        class="thumb__btn"
+                        type="button"
+                        data-lightbox
+                        data-src="./assets/个人网站图片信息补充/腾讯-项目3截图.png"
+                        data-caption="项目 03 截图"
+                        aria-label="查看 项目 03 截图大图"
+                      >
+                        <img src="./assets/个人网站图片信息补充/腾讯-项目3截图.png" alt="项目 03 截图" loading="lazy" />
+                      </button>
+                    </figure>
+                    <ul class="list">
+                      <li>召回：热度召回（实时监测高效素材）+ 新热/冷启召回（72 小时优质新素材）组合，保障覆盖与多样性。</li>
+                      <li>分发：参与多目标排序权重设计，平衡业务目标与用户体验，完善全局频控与相似过滤。</li>
+                      <li>数据基建：重构内容标签体系，推动内容特征表供算法训练使用，提升特征质量。</li>
+                      <li>生态建设：素材激励机制与效率排行榜看板，打通跨部门素材同步流程，月均新增素材 5000+。</li>
+                    </ul>
+                    <div class="metrics metrics--tight">
+                      <div class="metric">
+                        <div class="metric__v count" data-count="14" data-suffix="%">0</div>
+                        <div class="metric__k">外曝内点率</div>
+                      </div>
+                      <div class="metric">
+                        <div class="metric__v count" data-count="36" data-suffix="%">0</div>
+                        <div class="metric__k">用户增长投入产出</div>
+                      </div>
+                      <div class="metric">
+                        <div class="metric__v count" data-count="5000" data-suffix="+">0</div>
+                        <div class="metric__k">月新增素材</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+                <div class="capability-row">
+                  <span class="cap">生成式工具产品化</span>
+                  <span class="cap">推荐策略设计</span>
+                  <span class="cap">算法协作与对照实验</span>
+                  <span class="cap">工具融合闭环</span>
+                  <span class="cap">内容生态与激励</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CAPABILITY -->
+      <section id="capability" class="section">
+        <div class="section__head reveal">
+          <h2>核心能力模型</h2>
+          <p class="muted">原封不动展示材料中的“积累核心能力点”。</p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="glass card reveal">
+            <h3>同程旅行：积累核心能力点</h3>
+            <ul class="list">
+              <li>用户分层与洞察能力：搭建 RFM 模型，分析用户画像与价值层级。</li>
+              <li>增长转化策略能力：设计权益激励、精准触达等策略，驱动用户转化与价值跃迁。</li>
+              <li>全渠道运营能力：整合 App、微信生态、短信等渠道，搭建精准触达体系。</li>
+              <li>数据驱动能力：通过 A/B 实验、数据复盘迭代策略，保障 ROI 与效果量化。</li>
+              <li>跨部门协作能力：协调资源落地福利专区、触达工具等产品化方案。</li>
+            </ul>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>腾讯：积累核心能力点</h3>
+            <ul class="list">
+              <li>AI 产品化能力：AIGC 工具从 0 到 1 落地，熟悉 Pompt、RAG、模型精调与效果评估。</li>
+              <li>推荐策略设计能力：用户画像、召回排序、多目标优化、社交关系链推荐设计。</li>
+              <li>算法协作与实验能力：AB 实验设计、特征工程、模型迭代，驱动策略效果提升。</li>
+              <li>产品设计与融合能力：闭环工具交互设计，深度融合广告投放系统，优化生产链路。</li>
+              <li>业务落地与运营能力：AI 审核闭环搭建、三维评估体系制定、内容生态建设与激励设计。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- AIPILOT -->
+      <section id="aipilot" class="section">
+        <div class="section__head reveal">
+          <h2>新业务思考：起飞（智能体化营销平台）</h2>
+          <p class="muted">
+            从“成熟营销工具”向“智能体全流程营销工具”转型：诊断 → 投放 → 创意，形成自动化闭环。
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="glass card reveal">
+            <h3>定位转型</h3>
+            <div class="tri">
+              <div class="tri__item">
+                <div class="tri__k">过去</div>
+                <div class="tri__v">人工营销支撑引擎</div>
+              </div>
+              <div class="tri__item">
+                <div class="tri__k">现在</div>
+                <div class="tri__v">智能营销决策引擎</div>
+              </div>
+              <div class="tri__item tri__item--accent">
+                <div class="tri__k">目标</div>
+                <div class="tri__v">智能体平台：智能分析 + 自动化投放执行</div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="stack">
+              <div class="stack__row">
+                <span class="stack__tag">智能诊断</span>
+                <span class="muted">问题自动发现 · 根因定位 · 归因分析</span>
+              </div>
+              <div class="stack__row">
+                <span class="stack__tag">智能投放</span>
+                <span class="muted">预算/出价/启停/批量操作自动化</span>
+              </div>
+              <div class="stack__row">
+                <span class="stack__tag">智能创意</span>
+                <span class="muted">生成→分发→迭代优胜劣汰闭环</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>当前进展</h3>
+            <div class="progress">
+              <div class="progress__row">
+                <div class="progress__label">智能诊断</div>
+                <div class="progress__bar" data-progress="50">
+                  <div class="progress__fill"></div>
+                </div>
+                <div class="progress__pct"><span class="count" data-count="50" data-suffix="%">0</span></div>
+              </div>
+              <div class="progress__row">
+                <div class="progress__label">智能投放</div>
+                <div class="progress__bar" data-progress="5">
+                  <div class="progress__fill"></div>
+                </div>
+                <div class="progress__pct"><span class="count" data-count="5" data-suffix="%">0</span></div>
+              </div>
+              <div class="progress__row">
+                <div class="progress__label">智能创意</div>
+                <div class="progress__bar" data-progress="5">
+                  <div class="progress__fill"></div>
+                </div>
+                <div class="progress__pct"><span class="count" data-count="5" data-suffix="%">0</span></div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+            <p class="muted">
+              关键挑战：从“诊断/报表”走向“半托管执行（带回滚/审计）”，才能兑现真实人效收益。
+            </p>
+          </article>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="glass card reveal">
+            <h3>问题 & 解法（建议优先级）</h3>
+            <div class="accordion" data-accordion>
+              <button class="accordion__item tone-1" type="button" aria-expanded="false">
+                <span class="accordion__title">1) 智能体助手无效果评测与反馈机制</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion__panel">
+                <ul class="list">
+                  <li>搭建智能体数据看板：调用次数 / 资源消耗 / 会话数 / 任务完成量 / 使用人群</li>
+                  <li>为每个能力设定上线前后评测体系：离线基准集 + 线上指标 + 复盘机制</li>
+                </ul>
+              </div>
+
+              <button class="accordion__item tone-2" type="button" aria-expanded="false">
+                <span class="accordion__title">2) 迭代单点业务驱动，缺全局兼容视角</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion__panel">
+                <ul class="list">
+                  <li>能力“模块化 + 版本化”：策略资产沉淀，明确输入/输出/依赖</li>
+                  <li>平台主动发起“提收益效率”的方向：目标/约束/可解释机制先行</li>
+                </ul>
+              </div>
+
+              <button class="accordion__item tone-3" type="button" aria-expanded="false">
+                <span class="accordion__title">3) 从洞察到执行：把诊断产品化成行动清单</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion__panel">
+                <ul class="list">
+                  <li>报表末尾固定输出：建议动作 + 影响范围 + 风险提示 + 预期收益</li>
+                  <li>一次确认执行（带回滚），缩短优化师决策路径</li>
+                </ul>
+              </div>
+
+              <button class="accordion__item tone-4" type="button" aria-expanded="false">
+                <span class="accordion__title">4) 自动化先给“安全感”：审批 / 灰度 / 回滚 / 审计</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion__panel">
+                <ul class="list">
+                  <li>没有回滚/审计，团队“不敢用”，人效收益无法兑现</li>
+                  <li>将权限与风险控制内化到产品流程：可追溯、可解释、可回滚</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>行动清单示例（把诊断变成执行）</h3>
+            <p class="muted">
+              输出格式示例：每条动作都带影响范围、风险与可回滚，让“自动化”可控可用。
+            </p>
+            <div class="todo">
+              <div class="todo__item">
+                <div class="todo__left">
+                  <div class="todo__title">下调计划 A 出价 8%</div>
+                  <div class="todo__meta">影响：近 3 天高消耗计划 · 风险：转化波动 · 回滚：一键恢复</div>
+                </div>
+                <div class="todo__right">
+                  <span class="todo__tag">建议</span>
+                  <span class="todo__delta">预期投入产出 +6~10%</span>
+                </div>
+              </div>
+              <div class="todo__item">
+                <div class="todo__left">
+                  <div class="todo__title">启用相似素材过滤（频控）</div>
+                  <div class="todo__meta">影响：素材流 · 风险：曝光下降 · 回滚：关闭规则</div>
+                </div>
+                <div class="todo__right">
+                  <span class="todo__tag">体验</span>
+                  <span class="todo__delta">预期点击稳定</span>
+                </div>
+              </div>
+              <div class="todo__item">
+                <div class="todo__left">
+                  <div class="todo__title">自动生成 10 条新素材（检索增强 + 模板）</div>
+                  <div class="todo__meta">影响：创意生产 · 风险：合规驳回 · 回滚：人工审核兜底</div>
+                </div>
+                <div class="todo__right">
+                  <span class="todo__tag">创意</span>
+                  <span class="todo__delta">预期效率 +2 倍</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- INSIGHT -->
+      <section id="insight" class="section">
+        <div class="section__head reveal">
+          <h2>智能营销行业洞察</h2>
+          <p class="muted">从“工具 → 系统 → 智能 → 智能体”，分水岭是：能否把策略做成可解释、可控、可追溯的自动化闭环。</p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="glass card reveal">
+            <h3>发展阶段（从工具到经营智能）</h3>
+            <ol class="ladder">
+              <li>
+                <span class="ladder__k">阶段 A</span>
+                <span class="ladder__v">投放工具化：批量建计划 / 复制 / 调价 / 报表导出</span>
+              </li>
+              <li>
+                <span class="ladder__k">阶段 B</span>
+                <span class="ladder__v">中台系统化：权限/预算/口径/大盘，多账户经营</span>
+              </li>
+              <li>
+                <span class="ladder__k">阶段 C</span>
+                <span class="ladder__v">智能化：生成式创意 + 策略自动化 + 归因与增量评估</span>
+              </li>
+              <li class="ladder__accent">
+                <span class="ladder__k">阶段 D</span>
+                <span class="ladder__v">智能体化：围绕目标与约束自主制定/执行/复盘投放策略，多平台协同与可解释决策</span>
+              </li>
+            </ol>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>趋势与机会（未来 1–3 年）</h3>
+            <div class="trend">
+              <div class="trend__item">
+                <div class="trend__k">趋势 1</div>
+                <div class="trend__v">投放工程化：经验 → 团队策略资产（模板化、版本化、可回滚）</div>
+              </div>
+              <div class="trend__item">
+                <div class="trend__k">趋势 2</div>
+                <div class="trend__v">生成式创意 → 素材生产线：以归因与指标为反馈，驱动自动迭代</div>
+              </div>
+              <div class="trend__item">
+                <div class="trend__k">趋势 3</div>
+                <div class="trend__v">智能体成为投放协作者：自动方案、执行实验、追踪数据、产出复盘</div>
+              </div>
+              <div class="trend__item">
+                <div class="trend__k">趋势 4</div>
+                <div class="trend__v">合规与治理刚需：权限、审计、风控与素材合规决定自动化上限</div>
+              </div>
+              <div class="divider"></div>
+              <p class="muted">
+                机会点：跨平台统一数据模型（口径/归因）× 策略资产化与可解释自动化 × 行业场景智能体（电商/游戏/本地生活）。
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid grid--2" style="margin-top: 14px">
+          <article class="glass card reveal">
+            <h3>市场格局（四类玩家）</h3>
+            <div class="players">
+              <div class="player">
+                <div class="player__k">媒体平台系</div>
+                <div class="player__v">广告投放平台与生态工具</div>
+                <div class="player__m muted">优势：数据闭环强；约束：跨平台受限、偏平台目标</div>
+              </div>
+              <div class="player">
+                <div class="player__k">代理商/服务商系</div>
+                <div class="player__v">投放中台、自动化、报表与代运营增效</div>
+                <div class="player__m muted">优势：懂一线场景；约束：口径不一、产品化难</div>
+              </div>
+              <div class="player">
+                <div class="player__k">企业自建增长中台</div>
+                <div class="player__v">大广告主自研：数据仓库 + 自动化 + 素材工厂</div>
+                <div class="player__m muted">优势：贴合业务；约束：维护成本高、复用性弱</div>
+              </div>
+              <div class="player player--accent">
+                <div class="player__k">智能产品公司</div>
+                <div class="player__v">生成式素材、智能分析、智能体编排与自动化</div>
+                <div class="player__m muted">优势：创新快；约束：闭环依赖、可控性挑战</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>共性痛点（贴近优化师工作流）</h3>
+            <div class="pain">
+              <div class="pain__row">
+                <div class="pain__k">多平台多账户</div>
+                <div class="pain__v">账户结构复杂、权限分散、预算口径不统一；同步成本高。</div>
+                <div class="pain__r muted">要求：统一账号资产/权限/预算中枢，支持批量与审计。</div>
+              </div>
+              <div class="pain__row">
+                <div class="pain__k">数据大盘</div>
+                <div class="pain__v">口径不一致、跨平台对比难、异常定位慢。</div>
+                <div class="pain__r muted">要求：统一指标体系 + 数据治理 + 可追溯链路，输出根因提示。</div>
+              </div>
+              <div class="pain__row">
+                <div class="pain__k">批量操作</div>
+                <div class="pain__v">批量不等于策略，缺少边界管理与策略复用。</div>
+                <div class="pain__r muted">要求：策略编排/策略库/灰度/回滚，从动作升级为策略。</div>
+              </div>
+              <div class="pain__row">
+                <div class="pain__k">素材生产</div>
+                <div class="pain__v">迭代慢，版本/来源/效果关联弱；容易出现“海量低质”。</div>
+                <div class="pain__r muted">要求：生成-审核-投放-归因-迭代闭环与资产沉淀。</div>
+              </div>
+              <div class="pain__row">
+                <div class="pain__k">人效与协作</div>
+                <div class="pain__v">经验难复制，新人上手慢；复盘缺标准。</div>
+                <div class="pain__r muted">要求：流程化与知识化：模板、复盘卡片、策略沉淀与推荐。</div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <footer class="footer" style="margin-top: 18px">
+          <span class="muted">© <span id="year"></span> · 轻量玻璃拟态 · 低饱和动效</span>
+          <a class="to-top" href="#top">回到顶部</a>
+        </footer>
+      </section>
+    </main>
+
+    <!-- Lightbox -->
+    <dialog class="lightbox" id="lightbox" aria-label="图片预览">
+      <button class="lightbox__close" type="button" aria-label="关闭预览">关闭</button>
+      <figure class="lightbox__fig">
+        <img class="lightbox__img" alt="" />
+        <figcaption class="lightbox__cap muted"></figcaption>
+      </figure>
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
