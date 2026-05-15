@@ -159,13 +159,13 @@
       <!-- ABOUT -->
       <section id="about" class="section">
         <div class="section__head reveal">
-          <h2>关于我</h2>
-          <p class="muted">把“经验”沉淀为可复用的方法论，再迁移到新的业务场景。</p>
+          <h2>关于我历史在做什么</h2>
+          <p class="muted">一句话总结</p>
         </div>
 
         <div class="glass card reveal aboutline">
           <p class="aboutline__text">
-            历史我主要在做：用户价值分层与增长转化、全渠道触达体系、资源入口流量分发策略、生成式内容工具与推荐策略落地。
+            以增长目标为约束，贯通「洞察 → 策略 → 产品化 → 评测迭代」，用数据与产品机制来保证增长目标的完成。
           </p>
         </div>
       </section>
@@ -202,7 +202,6 @@
                 <div class="biz">
                   <div class="biz__head">
                     <div class="biz__title">业务资料卡</div>
-                    <div class="biz__hint muted">让项目更好懂：业务是什么、目标是什么、我负责什么。</div>
                   </div>
                   <div class="biz__grid">
                     <div class="biz__kv"><span class="biz__k">行业</span><span class="biz__v">在线旅游平台（文旅）</span></div>
@@ -355,7 +354,6 @@
                 <div class="biz">
                   <div class="biz__head">
                     <div class="biz__title">业务资料卡</div>
-                    <div class="biz__hint muted">业务是什么、入口资源是什么、模块职责是什么。</div>
                   </div>
                   <div class="biz__grid">
                     <div class="biz__kv"><span class="biz__k">行业</span><span class="biz__v">社交 + 游戏分发</span></div>
@@ -719,7 +717,7 @@
             </div>
           </article>
 
-          <article class="glass card reveal">
+          <article class="glass card reveal is-clickable" id="progressCard" data-progress-card>
             <h3>当前进展</h3>
             <div class="progress">
               <div class="progress__row">
@@ -749,6 +747,59 @@
             <p class="muted">
               关键挑战：从“诊断/报表”走向“半托管执行（带回滚/审计）”，才能兑现真实人效收益。
             </p>
+
+            <div class="progress__tap muted">点击卡片查看各模块进展明细</div>
+            <div class="progressDetail" data-progress-detail aria-hidden="true">
+              <div class="progressDetail__head">
+                <div class="progressDetail__title">进展明细</div>
+                <button class="progressDetail__close" type="button" data-progress-close>收起</button>
+              </div>
+              <div class="progressDetail__grid">
+                <div class="progressDetail__col">
+                  <div class="progressDetail__k">智能诊断（50%）</div>
+                  <div class="progressDetail__tag">已完成</div>
+                  <ul class="list">
+                    <li>基础数据接入</li>
+                    <li>归因分析、数据诊断、数据报表能力</li>
+                  </ul>
+                  <div class="progressDetail__tag">已推进</div>
+                  <ul class="list">
+                    <li>自动化任务</li>
+                  </ul>
+                  <div class="progressDetail__tag">待规划</div>
+                  <ul class="list">
+                    <li>智能自动诊断监控预警</li>
+                  </ul>
+                </div>
+                <div class="progressDetail__col">
+                  <div class="progressDetail__k">智能投放（5%）</div>
+                  <div class="progressDetail__tag">已推进</div>
+                  <ul class="list">
+                    <li>基建：自动批量复制能力</li>
+                  </ul>
+                  <div class="progressDetail__tag">待规划</div>
+                  <ul class="list">
+                    <li>基建：自动新建、编辑、修改能力</li>
+                    <li>多渠道：预算智能分配与调整</li>
+                    <li>基础出价策略自动化</li>
+                    <li>计划启停自动化</li>
+                    <li>多渠道：实时策略联动</li>
+                  </ul>
+                </div>
+                <div class="progressDetail__col">
+                  <div class="progressDetail__k">智能创意（5%）</div>
+                  <div class="progressDetail__tag">已推进/待规划</div>
+                  <ul class="list">
+                    <li>创意生成能力</li>
+                    <li>创意标签体系搭建</li>
+                    <li>创意组合与自动投放</li>
+                    <li>创意自动迭代与优胜劣汰</li>
+                    <li>创意与人群智能匹配</li>
+                    <li>创意合规自动检测</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
 
@@ -789,16 +840,6 @@
                 </ul>
               </div>
 
-              <button class="accordion__item tone-4" type="button" aria-expanded="false">
-                <span class="accordion__title">4) 自动化先给“安全感”：审批 / 灰度 / 回滚 / 审计</span>
-                <span class="accordion__icon" aria-hidden="true"></span>
-              </button>
-              <div class="accordion__panel">
-                <ul class="list">
-                  <li>没有回滚/审计，团队“不敢用”，人效收益无法兑现</li>
-                  <li>将权限与风险控制内化到产品流程：可追溯、可解释、可回滚</li>
-                </ul>
-              </div>
             </div>
           </article>
 

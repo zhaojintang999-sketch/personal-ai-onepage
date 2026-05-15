@@ -192,24 +192,43 @@ function formatNumber(n, decimals = 0) {
   });
 })();
 
-// --- tabs ---
+// --- progress card detail (click-to-expand) ---
 (() => {
-  const root = document.querySelector("[data-tabs]");
-  if (!root) return;
-  const tabs = $$("[data-tab]", root);
-  const panels = $$("[data-panel]", root);
-  if (!tabs.length || !panels.length) return;
+  const card = document.querySelector("[data-progress-card]");
+  if (!card) return;
+  const detail = card.querySelector("[data-progress-detail]");
+  const close = card.querySelector("[data-progress-close]");
+  if (!detail) return;
 
-  const open = (key) => {
-    tabs.forEach((t) => {
-      const active = t.dataset.tab === key;
-      t.classList.toggle("is-active", active);
-      t.setAttribute("aria-selected", active ? "true" : "false");
-    });
-    panels.forEach((p) => p.classList.toggle("is-open", p.dataset.panel === key));
+  const open = () => {
+    detail.classList.add("is-open");
+    detail.setAttribute("aria-hidden", "false");
+  };
+  const closeIt = () => {
+    detail.classList.remove("is-open");
+    detail.setAttribute("aria-hidden", "true");
+  };
+  const toggle = () => {
+    if (detail.classList.contains("is-open")) closeIt();
+    else open();
   };
 
-  tabs.forEach((t) => t.addEventListener("click", () => open(t.dataset.tab)));
+  card.addEventListener("click", (e) => {
+    const target = e.target;
+    // ignore clicks on buttons/links inside (e.g., close button)
+    if (target && (target.closest("button") || target.closest("a"))) {
+      // if it's the close button, close
+      if (target.closest("[data-progress-close]")) closeIt();
+      return;
+    }
+    toggle();
+  });
+
+  close?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    closeIt();
+  });
 })();
 
 // --- lightbox for images ---
